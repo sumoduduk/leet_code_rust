@@ -1,6 +1,7 @@
 mod merge_array;
+mod remove_element;
 
-use merge_array::run;
+use remove_element::run;
 
 fn main() {
     run();
