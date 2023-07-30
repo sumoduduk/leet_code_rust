@@ -1,9 +1,10 @@
 #![allow(dead_code)]
 mod majority_element;
 mod merge_array;
+mod remove_duplicate;
 mod remove_element;
 
-use majority_element::run;
+use remove_duplicate::run;
 
 fn main() {
     run();
