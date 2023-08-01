@@ -2,12 +2,14 @@
 mod best_time_buy_stock;
 mod best_time_buy_stock_2;
 mod best_time_to_buy_stock_3;
+mod is_palindrorme;
+mod is_subsequence;
 mod majority_element;
 mod merge_array;
 mod remove_duplicate;
 mod remove_element;
 
-use best_time_to_buy_stock_3::run;
+use is_subsequence::run;
 
 fn main() {
     run();
