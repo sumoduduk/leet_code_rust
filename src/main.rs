@@ -4,12 +4,13 @@ mod best_time_buy_stock_2;
 mod best_time_to_buy_stock_3;
 mod is_palindrorme;
 mod is_subsequence;
+mod length_of_last_word;
 mod majority_element;
 mod merge_array;
 mod remove_duplicate;
 mod remove_element;
 
-use is_subsequence::run;
+use length_of_last_word::run;
 
 fn main() {
     run();
