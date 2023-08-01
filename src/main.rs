@@ -9,8 +9,9 @@ mod majority_element;
 mod merge_array;
 mod remove_duplicate;
 mod remove_element;
+mod word_pattern;
 
-use length_of_last_word::run;
+use word_pattern::run;
 
 fn main() {
     run();
