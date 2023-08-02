@@ -1,32 +1,25 @@
 struct Leet {}
 impl Leet {
-    fn sum_bytes(str: &str) -> u16 {
-        str.as_bytes().iter().map(|&s| s as u16).sum()
-    }
+    fn sort_vec(str: &String) -> String {
+        let mut byte: Vec<_> = str.chars().collect();
+        byte.sort_unstable();
 
-    fn dedup_sum(vec: &Vec<String>) -> (Vec<u16>, usize) {
-        let mut val: Vec<u16> = vec.iter().map(|s| Self::sum_bytes(&s)).collect();
-        val.sort();
-        val.dedup();
-        let len = { val.len() };
-
-        (val, len)
+        let val: String = byte.into_iter().collect();
+        val
     }
 
     fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
-        let (arr, len) = Self::dedup_sum(&strs);
-        let mut val: Vec<Vec<String>> = Vec::with_capacity(len);
+        use std::collections::HashMap;
+        let mut table: HashMap<String, Vec<String>> = HashMap::new();
 
-        let mut i = 0;
-        while i < len {
-            val.push(Vec::new());
-            strs.iter().for_each(|s| {
-                if Self::sum_bytes(&s) == arr[i] {
-                    val[i].push(s.to_string())
-                }
-            });
-            i += 1;
+        for stri in strs {
+            let sorted = Self::sort_vec(&stri);
+
+            let val_vec = table.entry(sorted).or_insert_with(|| Vec::new());
+            val_vec.push(stri);
         }
+
+        let val: Vec<Vec<String>> = table.into_values().collect();
         val
     }
 }
@@ -45,12 +38,6 @@ pub fn run() {
         vec!["nat".to_string(), "tan".to_string()],
         vec!["ate".to_string(), "eat".to_string(), "tea".to_string()],
     ];
-
-    let duh = Leet::sum_bytes("duh");
-    let ill = Leet::sum_bytes("ill");
-
-    dbg!(duh);
-    dbg!(ill);
 
     assert_eq!(output, Leet::group_anagrams(inputs));
 }

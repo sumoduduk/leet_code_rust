@@ -11,11 +11,12 @@ mod length_of_last_word;
 mod majority_element;
 mod merge_array;
 mod move_zeroes;
+mod remove_anagram;
 mod remove_duplicate;
 mod remove_element;
 mod word_pattern;
 
-use group_anagram::run;
+use remove_anagram::run;
 
 fn main() {
     run();
