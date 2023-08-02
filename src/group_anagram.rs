@@ -1,18 +1,34 @@
-fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
-    let mut byte_strs: Vec<Vec<u8>> = Vec::with_capacity(strs.len());
-
-    for elm in strs {
-        let mut byte = elm.into_bytes();
-        byte.sort();
-        byte_strs.push(byte);
+struct Leet {}
+impl Leet {
+    fn sum_bytes(str: &str) -> u16 {
+        str.as_bytes().iter().map(|&s| s as u16).sum()
     }
 
-    byte_strs.sort();
-    byte_strs.dedup();
+    fn dedup_sum(vec: &Vec<String>) -> (Vec<u16>, usize) {
+        let mut val: Vec<u16> = vec.iter().map(|s| Self::sum_bytes(&s)).collect();
+        val.sort();
+        val.dedup();
+        let len = { val.len() };
 
-    dbg!(byte_strs);
+        (val, len)
+    }
 
-    vec![vec!["".to_string()]]
+    fn group_anagrams(strs: Vec<String>) -> Vec<Vec<String>> {
+        let (arr, len) = Self::dedup_sum(&strs);
+        let mut val: Vec<Vec<String>> = Vec::with_capacity(len);
+
+        let mut i = 0;
+        while i < len {
+            val.push(Vec::new());
+            strs.iter().for_each(|s| {
+                if Self::sum_bytes(&s) == arr[i] {
+                    val[i].push(s.to_string())
+                }
+            });
+            i += 1;
+        }
+        val
+    }
 }
 
 pub fn run() {
@@ -30,5 +46,11 @@ pub fn run() {
         vec!["ate".to_string(), "eat".to_string(), "tea".to_string()],
     ];
 
-    assert_eq!(output, group_anagrams(inputs));
+    let duh = Leet::sum_bytes("duh");
+    let ill = Leet::sum_bytes("ill");
+
+    dbg!(duh);
+    dbg!(ill);
+
+    assert_eq!(output, Leet::group_anagrams(inputs));
 }
