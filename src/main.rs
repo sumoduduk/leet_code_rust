@@ -15,6 +15,7 @@ mod move_zeroes;
 mod remove_anagram;
 mod remove_duplicate;
 mod remove_element;
+mod two_sums;
 mod word_pattern;
 
 use remove_anagram::run;
