@@ -9,6 +9,7 @@ mod is_palindrorme;
 mod is_subsequence;
 mod isomporphic_strings;
 mod length_of_last_word;
+mod longest_consecutive;
 mod majority_element;
 mod merge_array;
 mod move_zeroes;
@@ -16,9 +17,12 @@ mod remove_anagram;
 mod remove_duplicate;
 mod remove_element;
 mod two_sum;
+
+mod two_sums;
+mod two_sums_2;
 mod word_pattern;
 
-use two_sum::run;
+use longest_consecutive::run;
 
 fn main() {
     run();
