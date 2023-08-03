@@ -3,7 +3,6 @@ fn is_subsequence(s: String, t: String) -> bool {
 
     for c in s.chars() {
         let finder = &t[t_index..t.len()];
-        dbg!(&finder);
 
         match finder.find(c) {
             Some(i) => t_index += i + 1,

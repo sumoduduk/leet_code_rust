@@ -2,6 +2,7 @@
 mod best_time_buy_stock;
 mod best_time_buy_stock_2;
 mod best_time_to_buy_stock_3;
+mod can_construct;
 mod is_palindrorme;
 mod is_subsequence;
 mod length_of_last_word;
@@ -11,7 +12,7 @@ mod remove_duplicate;
 mod remove_element;
 mod word_pattern;
 
-use word_pattern::run;
+use can_construct::run;
 
 fn main() {
     run();
