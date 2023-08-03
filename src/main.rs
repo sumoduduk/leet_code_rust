@@ -15,9 +15,10 @@ mod move_zeroes;
 mod remove_anagram;
 mod remove_duplicate;
 mod remove_element;
+mod two_sum;
 mod word_pattern;
 
-use remove_anagram::run;
+use two_sum::run;
 
 fn main() {
     run();
