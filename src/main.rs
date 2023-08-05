@@ -19,6 +19,7 @@ mod remove_anagram;
 mod remove_duplicate;
 mod remove_element;
 
+mod longest_substr;
 mod max_sliding_windows;
 mod two_sums;
 mod two_sums_2;
