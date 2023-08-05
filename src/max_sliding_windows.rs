@@ -6,9 +6,8 @@ fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
         return vec![*max];
     }
 
-    let max_chunks = nums.windows(k as usize);
-
     let mut arr = Vec::with_capacity(nums.len());
+    let max_chunks = nums.windows(k as usize);
 
     for chunk in max_chunks {
         let mut mini = i32::MIN;
