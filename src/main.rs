@@ -21,6 +21,7 @@ mod remove_element;
 
 mod find_max_average;
 mod longest_substr;
+mod max_area;
 mod max_sliding_windows;
 mod max_vowels;
 mod two_sums;
