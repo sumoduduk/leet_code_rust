@@ -20,6 +20,7 @@ mod remove_duplicate;
 mod remove_element;
 
 mod find_max_average;
+mod longest_subarr;
 mod longest_substr;
 mod max_area;
 mod max_sliding_windows;
