@@ -19,6 +19,7 @@ mod remove_anagram;
 mod remove_duplicate;
 mod remove_element;
 
+mod cum_reverse;
 mod find_max_average;
 mod longest_subarr;
 mod longest_substr;
@@ -26,6 +27,7 @@ mod max_area;
 mod max_sliding_windows;
 mod max_vowels;
 mod pivot_index;
+mod replay;
 mod search_matrix;
 mod two_sums;
 mod two_sums_2;
